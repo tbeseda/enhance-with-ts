@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "start": "npx arc sandbox"
+  },
+  "dependencies": {
+    "@architect/architect": "^10.5.3",
+    "@enhance/arc-plugin-enhance": "latest"
+  },
+  "devDependencies": {
+    "esbuild": "^0.15.7",
+    "tiny-glob": "^0.2.9",
+    "typescript": "^4.8.2"
+  }
+}

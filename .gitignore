@@ -1,0 +1,14 @@
+.env
+
+node_modules
+package-lock.json
+
+prefs.arc
+
+app
+!app/pages/.gitkeep
+
+public/components
+public/static.json
+
+.DS_Store
