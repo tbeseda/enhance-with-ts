@@ -1,17 +1,29 @@
 const fs = require("node:fs");
 const { build: esbuild } = require("esbuild");
-const glob = require("tiny-glob");
 
 const DIR = "enhance";
 const logPrefix = "  Enhance-TS:";
 
+function walk(directory) {
+	return fs.readdirSync(directory, { withFileTypes: true }).flatMap((item) => {
+		const path = `${directory}/${item.name}`;
+
+		if (item.isDirectory()) {
+			return walk(path);
+		}
+
+		return path;
+	});
+}
+
 async function compileProject() {
-	let appFiles = await glob(`./${DIR}/**/*.*`);
-	const nodeFiles = appFiles.filter(
-		(path) => path.endsWith(".ts") && !path.startsWith(`${DIR}/components/`),
+	const appFiles = walk(DIR);
+	const tsFiles = appFiles.filter((path) => path.endsWith(".ts"));
+	const nodeFiles = tsFiles.filter(
+		(path) => !path.startsWith(`${DIR}/components/`),
 	);
-	const browserFiles = appFiles.filter(
-		(path) => path.endsWith(".ts") && path.startsWith(`${DIR}/components/`),
+	const browserFiles = tsFiles.filter(
+		(path) => path.startsWith(`${DIR}/components/`),
 	);
 	const staticFiles = appFiles.filter(
 		(path) => !(path.endsWith(".ts") || path.endsWith("tsconfig.json")),
@@ -44,7 +56,7 @@ async function compileProject() {
 	}
 
 	console.log(
-		`${logPrefix} ${staticFiles.length} files hydrated to main Enhance /app`,
+		`${logPrefix} ${staticFiles.length} files copied to main Enhance /app`,
 	);
 }
 

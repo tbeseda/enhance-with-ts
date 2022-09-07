@@ -9,7 +9,7 @@ export default function Head(req) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${title}</title>
   <link rel="stylesheet" href="/_static/styles.css">
-  <link rel="icon" href="https://fav.farm/🌶" />
+  <link rel="icon" href="https://fav.farm/✅" />
 </head>
 <body class="p4">
   `;

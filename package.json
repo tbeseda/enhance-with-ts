@@ -7,7 +7,6 @@
     "@enhance/arc-plugin-enhance": "latest"
   },
   "devDependencies": {
-    "esbuild": "^0.15.7",
-    "tiny-glob": "^0.2.9"
+    "esbuild": "^0.15.7"
   }
 }
