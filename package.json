@@ -8,7 +8,6 @@
   },
   "devDependencies": {
     "esbuild": "^0.15.7",
-    "tiny-glob": "^0.2.9",
-    "typescript": "^4.8.2"
+    "tiny-glob": "^0.2.9"
   }
 }
