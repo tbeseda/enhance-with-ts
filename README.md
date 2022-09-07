@@ -13,8 +13,7 @@
 │  │  └── todo-list.mjs ....... mixed with .mjs
 │  ├── head.ts ................ compiled/copied to app/
 │  ├── pages .................. compiled/copied to app/pages/
-│  │  ├── idk.ts
-│  │  ├── index.html
+│  │  ├── index.ts
 │  │  └── todos.html
 │  └── tsconfig.json .......... parent TS configuration
 ├── app ....................... destination for compiled files
