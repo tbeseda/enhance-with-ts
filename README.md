@@ -1,3 +1,16 @@
+# esbuild Enhance .ts
+
+## Approach:
+
+1. move app source to enhance/
+1. compile to app/
+1. handle .ts alongside .mjs|.html|etc.
+1. helpful tsconfig
+1. esbuild enhance/components/** to public/components/**
+1. the rest of enhance/** maps 1:1 to app/**
+
+## Annotated structure
+
 ```
 .
 ├── enhance ................... the app source directory
