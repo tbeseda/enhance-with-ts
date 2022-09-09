@@ -1,3 +1,5 @@
+> ⚠️  This was an experiment; see @enhance/types
+
 # esbuild Enhance .ts
 
 ## Approach:

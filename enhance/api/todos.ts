@@ -1,9 +1,19 @@
+import type {
+	EnhanceApiFunction,
+	EnhanceApiRequest,
+	EnhanceApiResponse,
+} from "../types";
+
 type Todo = {
 	title: string;
 	completed?: boolean;
 };
 
-export async function get() {
+export const get: EnhanceApiFunction = async function (
+	request: EnhanceApiRequest,
+): Promise<EnhanceApiResponse> {
+	console.log(`Handling ${request.path}...`);
+
 	const todos: Todo[] = [
 		{ title: "todo 1", completed: false },
 		{ title: "todo 2", completed: true },
@@ -13,7 +23,9 @@ export async function get() {
 		{ title: "todo 6", completed: false },
 	];
 
-	return {
+	const response: EnhanceApiResponse = {
 		json: { todos },
 	};
-}
+
+	return response;
+};

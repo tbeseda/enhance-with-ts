@@ -1,13 +1,6 @@
-import type {
-	EnhanceApiRequest,
-	EnhanceElementResult,
-	EnhanceHeadFunction,
-} from "./types";
-
-const Head: EnhanceHeadFunction = function (
-	req: EnhanceApiRequest,
-): EnhanceElementResult {
-	const { path } = req;
+/** @type {import('./types').EnhanceHeadFunction} */
+export default function Head(request) {
+	const { path } = request;
 	const title = `Todos — ${path}`;
 	return /* html */ `
 <!DOCTYPE html>
@@ -21,6 +14,4 @@ const Head: EnhanceHeadFunction = function (
 </head>
 <body class="p4">
   `;
-};
-
-export default Head;
+}

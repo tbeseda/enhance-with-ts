@@ -1,13 +1,5 @@
-import type {
-	EnhanceElementArgs,
-	EnhanceElementFunction,
-	EnhanceElementResult,
-} from "../types";
-
-const TodoItem: EnhanceElementFunction = function ({
-	html,
-	state: { attrs },
-}: EnhanceElementArgs): EnhanceElementResult {
+/** @type {import('../types').EnhanceElementFunction} */
+export default function TodoItem({ html, state: { attrs } }) {
 	const todoId = attrs["todo-id"];
 	const completed = typeof attrs.completed === "string";
 
@@ -22,6 +14,4 @@ const TodoItem: EnhanceElementFunction = function ({
 
 		<script src="/_static/components/todo-item.mjs"></script>
 	`;
-};
-
-export default TodoItem;
+}
