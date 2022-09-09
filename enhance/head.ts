@@ -1,12 +1,10 @@
 import type {
-	EnhanceApiRequest,
-	EnhanceElementResult,
-	EnhanceHeadFunction,
-} from "./types";
+	EnhanceApiReq,
+	EnhanceElemResult,
+	EnhanceHeadFn,
+} from "@enhance/types";
 
-const Head: EnhanceHeadFunction = function (
-	req: EnhanceApiRequest,
-): EnhanceElementResult {
+const Head: EnhanceHeadFn = function (req: EnhanceApiReq): EnhanceElemResult {
 	const { path } = req;
 	const title = `Todos — ${path}`;
 	return /* html */ `

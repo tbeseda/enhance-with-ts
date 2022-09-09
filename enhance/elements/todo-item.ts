@@ -1,13 +1,13 @@
 import type {
-	EnhanceElementArgs,
-	EnhanceElementFunction,
-	EnhanceElementResult,
-} from "../types";
+	EnhanceElemArgs,
+	EnhanceElemFn,
+	EnhanceElemResult,
+} from "@enhance/types";
 
-const TodoItem: EnhanceElementFunction = function ({
+const TodoItem: EnhanceElemFn = function ({
 	html,
 	state: { attrs },
-}: EnhanceElementArgs): EnhanceElementResult {
+}: EnhanceElemArgs): EnhanceElemResult {
 	const todoId = attrs["todo-id"];
 	const completed = typeof attrs.completed === "string";
 
